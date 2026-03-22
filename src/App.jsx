@@ -492,7 +492,7 @@ const SwipeRow = ({ row, isLast, isGuest, onEdit, onDelete, expanded, onToggle }
 };
 
 // ─── Desktop Table Row ────────────────────────────────────────────────────────
-const Cell = ({ value, badge, badgeColor, valueColor, muted }) => (
+const TableCell = ({ value, badge, badgeColor, valueColor, muted }) => (
   <div style={{ display:"flex", flexDirection:"column", justifyContent:"center", gap:5, minWidth:0 }}>
     <div style={{
       fontWeight: muted ? 500 : 700,
@@ -544,7 +544,7 @@ const DesktopRow = ({ row, isLast, isGuest, onEdit, onDelete, idx }) => {
       </div>
 
       {/* Age */}
-      <Cell
+      <TableCell
         value={row.age}
         badge={ageL}
         badgeColor={AGE_C[ageL]||"#6366f1"}
@@ -552,7 +552,7 @@ const DesktopRow = ({ row, isLast, isGuest, onEdit, onDelete, idx }) => {
       />
 
       {/* Income */}
-      <Cell
+      <TableCell
         value={fmtLocal(row.income, row.country)}
         badge={incL+" Income"}
         badgeColor={INC_C[incL]||"#64748b"}
@@ -560,7 +560,7 @@ const DesktopRow = ({ row, isLast, isGuest, onEdit, onDelete, idx }) => {
       />
 
       {/* Purchase */}
-      <Cell
+      <TableCell
         value={row.purchase}
         badge={catL}
         badgeColor={CAT_C[catL]||"#6366f1"}
@@ -568,7 +568,7 @@ const DesktopRow = ({ row, isLast, isGuest, onEdit, onDelete, idx }) => {
       />
 
       {/* Amt. Spent */}
-      <Cell
+      <TableCell
         value={fmtLocal(row.spend, row.country)}
         badge={spnL+" Spend"}
         badgeColor={SPN_C[spnL]||"#64748b"}
@@ -576,7 +576,7 @@ const DesktopRow = ({ row, isLast, isGuest, onEdit, onDelete, idx }) => {
       />
 
       {/* Country */}
-      <Cell
+      <TableCell
         value={row.country}
         badge={cntL}
         badgeColor={REG_C[cntL]||"#3b82f6"}
